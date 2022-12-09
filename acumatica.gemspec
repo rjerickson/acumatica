@@ -18,6 +18,7 @@ Gem::Specification.new do |spec|
     f.match(%r{^(test|spec|features)/})
   end
 
+  spec.metadata      = { "rubygems_mfa_required" => "true" }
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
@@ -33,6 +34,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec", "~> 3.12"
   spec.add_development_dependency "rubocop", "~> 1.40"
   spec.add_development_dependency "rubocop-performance", "~> 1.15.0"
+  spec.add_development_dependency "rubocop-rake", "~> 0.6.0"
   spec.add_development_dependency "rubocop-rspec", "~> 2.15.0"
   spec.add_development_dependency "vcr"
   spec.add_development_dependency "webmock"
