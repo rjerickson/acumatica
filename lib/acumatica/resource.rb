@@ -2,11 +2,6 @@
 
 require "active_support/core_ext/string/inflections"
 require "active_support/core_ext/hash/keys"
-
-if Gem::Version.new(RUBY_VERSION) < Gem::Version.new('2.5.0')
-  require "active_support/core_ext/hash/transform_values"
-end
-
 require "ostruct"
 
 module Acumatica
@@ -85,7 +80,7 @@ module Acumatica
     end
 
     def methodify(string)
-      string.underscore.parameterize(methodify_separator)
+      string.underscore.parameterize(**methodify_separator)
     end
 
     def methodify_separator
